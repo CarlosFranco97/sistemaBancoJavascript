@@ -4,6 +4,7 @@ const userName = 'admin';
 const userPassword = 'admin';
 let balance = 4000000;
 let userInput = prompt('Ingrese el usuario');
+
 function consultarSaldo() {
     console.log(`tu saldo es ${balance}`);
 }
@@ -20,7 +21,9 @@ function retirarDinero(){
 }
 
 function consignarDinero(){
-    console.log('consignar dinero');
+    let depositMoney = Number(prompt('Ingrese el monto a consignar'));
+    balance += depositMoney; 
+    console.log(`Deposito completado exitosamente, tu saldo actual es ${balance}`);
 }
 
 function transferirDinero(){    
