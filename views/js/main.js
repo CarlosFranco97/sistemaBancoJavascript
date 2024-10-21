@@ -1,9 +1,31 @@
 /* simular el comportamiento de un cajero electrónico con las siguientes funciones: consultar saldo, retirar dinero, consignar dinero, (a cuenta propia), y transferir dinero a cualquier cuenta condiciones: debe de existir validacion de inicio de sesion, solo de podra salir del menu cuando el usuario decida */
 
-let userName = 'admin'; 
-let userPassword = 'admin';
-
+const userName = 'admin'; 
+const userPassword = 'admin';
+let balance = 4000000;
 let userInput = prompt('Ingrese el usuario');
+function consultarSaldo() {
+    console.log(`tu saldo es ${balance}`);
+}
+
+function retirarDinero(){ 
+    if(balance <= 0)  {
+        console.log(`No hay fondos para retirar, tu saldo actual es: ${balance}`);
+    } else {
+        let cashWitdhdrawal = prompt(`Cuánto desea retirar? \n tu saldo es: ${balance}`);
+        balance -=  cashWitdhdrawal;
+        console.log(`Retiro completado saldo restante ${balance}`);
+        typeof(balance);
+    }
+}
+
+function consignarDinero(){
+    console.log('consignar dinero');
+}
+
+function transferirDinero(){    
+    console.log('transferir dinero');
+}
 if(userInput === userName) {
     let passwordInput = prompt('Ingrese contraseña');
     if(passwordInput === userPassword) {
@@ -42,18 +64,3 @@ if(userInput === userName) {
     console.error('usuario no existe');
 }
 
-function consultarSaldo() {
-    console.log('consulta de saldo');
-}
-
-function retirarDinero(){ 
-    console.log('retirar dinero');
-}
-
-function consignarDinero(){
-    console.log('consignar dinero');
-}
-
-function transferirDinero(){    
-    console.log('transferir dinero');
-}
