@@ -8,8 +8,34 @@ if(userInput === userName) {
     let passwordInput = prompt('Ingrese contraseña');
     if(passwordInput === userPassword) {
         console.log(`Bienvenido ${userName}`);
-        /* proceso */
+        let index = 0;
+        while(index === 0) {
+            let option = prompt('Ingrese la opción que desea realizar: \n 1)Consultar saldo \n 2)Retirar Dinero \n 3)Consignar Dinero \n 4)Transferir Dinero \n 5) Salir');
+            
+            switch(option){
+                 case '1': 
+                    consultarSaldo();
+                    break; 
+                
+                case '2':
+                    retirarDinero();
+                    break;
+                case '3':
+                    consignarDinero();
+                    break; 
+                case '4': 
+                transferirDinero(); 
+                break; 
+                case '5': 
+                index = 1;
+                break;
+                default: 
+                console.log('Ingrese una opcion valida');
+            }
+        }
+        
     } else {
+
         console.warn('Valide credenciales');
     }
 } else {
